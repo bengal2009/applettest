@@ -16,13 +16,16 @@
            nowarn="on">
     </javac>
   </target>
+  
+  <target name="test" depends="compile">
+  </target>
 
   <target name="clean">
     <delete dir="bin" />
     <delete file="applettest.jar" />
   </target>
   
-  <target name="package" depends="compile">
+  <target name="package" depends="test">
     <jar destfile="applettest.jar">
       <fileset dir="bin">
         <include name="**/*.class" />
